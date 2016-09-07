@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_remoteView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="系统自带的通知栏" />
+
+    <Button
+        android:id="@+id/btn_remoteView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义的通知栏" />
+
+</LinearLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.developart"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+    <!-- aidl服务权限设置 -->
+    <permission
+        android:name="com.example.chapter2.aidl.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal" />
+    <!-- 内容提供者权限设置 -->
+    <permission
+        android:name="com.example.wangchl"
+        android:protectionLevel="normal" />
+
+    <!-- 内容提供者权限 -->
+    <uses-permission android:name="com.example.wangchl" />
+    <!-- aidl服务权限 -->
+    <uses-permission android:name="com.example.chapter2.aidl.ACCESS_BOOK_SERVICE" />
+    <!-- 写外部存储权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 读外部存储权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 访问网络状态权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 访问网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- 主画面 -->
+        <activity
+            android:name="com.example.developart.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="standard" >
+        </activity>
+        <!-- 第二个画面 -->
+        <activity
+            android:name="com.example.developart.SecondActivity"
+            android:configChanges="screenLayout"
+            android:label="@string/app_name"
+            android:launchMode="standard"
+            android:taskAffinity="com.ryg.task1" >
+            <intent-filter>
+                <action android:name="com.example.developart.c" />
+                <action android:name="com.example.developart.d" />
+
+                <category android:name="com.example.developart.c" />
+                <category android:name="com.example.developart.d" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <!-- 第三个画面 -->
+        <activity
+            android:name="com.example.developart.ThirdActivity"
+            android:configChanges="screenLayout"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.ryg.task1" >
+        </activity>
+        <!-- 图书管理画面 -->
+        <activity
+            android:name="com.example.chapter2.aidl.BookManagerActivity"
+            android:label="@string/BookManagerActivity" >
+        </activity>
+        <!-- 图书管理服务画面 -->
+        <service
+            android:name="com.example.chapter2.aidl.BookManagerService"
+            android:process=":remote" >
+        </service>
+
+        <!-- 写画面 -->
+        <activity
+            android:name="com.example.chapter2.WriteActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- 读画面 -->
+        <activity
+            android:name="com.example.chapter2.ReadActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- 信使 -->
+        <activity
+            android:name="com.example.chapter2.messenger.MessengerActivity"
+            android:label="@string/app_name"
+            android:process=":remote" >
+        </activity>
+        <!-- 信使服务画面 -->
+        <service
+            android:name="com.example.chapter2.messenger.MessengerService"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.example.chapter2.messenger.MessengerService.messenger" />
+            </intent-filter>
+        </service>
+        <!-- 内容提供者 -->
+        <provider
+            android:name="com.example.chapter2.provider.BookProvider"
+            android:authorities="com.example.chapter2.provider.BookProvider.provider"
+            android:permission="com.example.wangchl"
+            android:process=":provider" >
+        </provider>
+        <!-- 内容提供者调用画面 -->
+        <activity
+            android:name="com.example.chapter2.provider.ProviderActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- 客户端 -->
+        <activity
+            android:name="com.example.chapter2.socket.TCPClientActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- 服务端 -->
+        <service
+            android:name="com.example.chapter2.socket.TCPServerService"
+            android:process=":remote" >
+        </service>
+        <!-- 线程池客户端 -->
+        <activity
+            android:name="com.example.chapter2.binderpool.BinderPoolActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <!-- 线程池服务端 -->
+        <service
+            android:name="com.example.chapter2.binderpool.BinderPoolService"
+            android:process=":remote" >
+        </service>
+        <!-- 第三章View -->
+        <activity
+            android:name="com.example.chapter3.TestActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.chapter4.DemoActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.chapter4.DemoSecondActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.chapter6.DemoThirdActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.chapter7.FourthActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.chapter12.ImageActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.chapter15.OptimizationActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.chapter5.RemoteViewActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.chapter5.DemoActivity_1"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.chapter5.DemoActivity_2"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.DemoMainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

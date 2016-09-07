@@ -1,0 +1,49 @@
+<com.example.chapter4.ui.RevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutAnimation="@anim/anim_layout"
+    android:orientation="vertical"
+    android:padding="12dp" >
+
+    <Button
+        android:id="@+id/button1"
+        style="@style/AppTheme.Button.Green"
+        android:text="View基础" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/AppTheme.Button.Green"
+        android:text="CircleView" />
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/AppTheme.Button.Green"
+        android:text="HorizontalScrollViewEx" />
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/AppTheme.Button.Green"
+        android:text="drawable" />
+
+    <Button
+        android:id="@+id/button5"
+        style="@style/AppTheme.Button.Green"
+        android:text="activity切换动画" />
+
+    <Button
+        android:id="@+id/button6"
+        style="@style/AppTheme.Button.Green"
+        android:text="图片加载" />
+
+    <Button
+        android:id="@+id/button7"
+        style="@style/AppTheme.Button.Green"
+        android:text="RemoteViews" />
+
+    <Button
+        android:id="@+id/button8"
+        style="@style/AppTheme.Button.Green"
+        android:text="发送模拟信息发送栏" />
+
+</com.example.chapter4.ui.RevealLayout>
